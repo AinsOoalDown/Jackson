@@ -32,4 +32,4 @@ function imageTemplate(Name, Description, Usage, Groups, dm, Cooldown, Aliases, 
         }
     };
 }
-imageTemplate("hentai", "Random image of hentai", "hentai <number>", ["nsfw"], true, { type: "map", time: 0 }, [""], nsfw.hentai);
+imageTemplate("gonewild", "Random image of people gonewild", "gonewild <number>", ["nsfw"], true, { type: "map", time: 0 }, ["gone wild", "gone_wild"], nsfw.gonewild);
