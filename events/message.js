@@ -1,5 +1,7 @@
 const database = require("quick.db");
 const config = require('../config/config.js');
+const Discord = require("discord.js");
+const client = new Discord.Client();
 
 exports.run = async (client, message) => {
     // user isn't bot
@@ -68,7 +70,11 @@ exports.run = async (client, message) => {
             if (!message.channel.nsfw) return client.err(message, "NSFW", "This is not a NSFW channel");
         }
         // owner only
-        if (command.groups[0] == "owner" && message.author.id !== '766385575530856458') return client.err(message, "Crenshaw Only", "This command can only be run by the bot owner, Crenshaw#1312");
+        if (command.groups[0] == "owner" && message.author.id !== client.config.userID) return client.err(message, "Crenshaw Only -lol no-", "This command can only be run by the bot hoster");
+        if (command.groups[0] == "owner" && message.author.id == client.config.userID) {
+            console.log(client.config.userID);
+            console.log(message.author.id);
+        }
 
         // no overrides or nsfw filters stopped the command, run normally
         command.run(client, message, args, command);
