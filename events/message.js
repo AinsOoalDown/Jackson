@@ -1,5 +1,7 @@
 const database = require("quick.db");
 const config = require('../config/config.js');
+const Discord = require("discord.js");
+const client = new Discord.Client();
 
 exports.run = async (client, message) => {
     // user isn't bot
@@ -61,21 +63,27 @@ exports.run = async (client, message) => {
     try {
 
         // errors and overrides, the running the command
-        // not able to run in DMS
-        if (!command.DM && !message.guild) return client.err(message, "DMs", "This command cannot be ran in DMs");
-        // NSFW filter for guilds
-        if (command.groups[0] == "nsfw" && message.guild) {
-            if (!message.channel.nsfw) return client.err(message, "NSFW", "This is not a NSFW channel");
+        if (command.DM === false && !message.guild) return client.err(message, "DMs", "This command cannot be ran in DMs");
+        if (command.groups[0] == "nsfw" && message.guild === null) {
+            if (!message.channel.nsfw && message.channel.type != "dm") return client.err(message, "NSFW", "This is not a NSFW channel");
         }
         // owner only
-        if (command.groups[0] == "owner" && message.author.id !== config.owner) return client.err(message, "Owner Only", "This command can only be run by the bot owner");
+        if (command.groups[0] == "owner" && message.author.id !== client.config.userID) return client.err(message, "Crenshaw Only -lol no-", "This command can only be run by the bot hoster");
+        if (command.groups[0] == "owner" && message.author.id == client.config.userID) {
+            console.log(client.config.userID);
+            console.log(message.author.id);
+        }
 
         // no overrides or nsfw filters stopped the command, run normally
-        message.channel.startTyping(20);
-        await command.run(client, message, args, command);
-        message.channel.stopTyping(true);
-        return console.log(`Ran ${command.name} \[${args.join(" ")}\]- ${message.author.username}#${message.author.discriminator} \(${message.author.id}\)`);
-
+        command.run(client, message, args, command);
+        await message.channel.stopTyping(true);
+        // checks if the user sent the command in DMs and logs it accordingly
+        if (message.channel.type!="dm"){
+            return console.log(`Ran ${command.name} \[${args.join(" ")}\]- ${message.author.username}#${message.author.discriminator} \(${message.author.id}\) (guild - ${message.guild.name})`);
+        }
+        if(message.channel.type=="dm"){
+            return console.log(`Ran ${command.name} \[${args.join(" ")}\]- ${message.author.username}#${message.author.discriminator} \(${message.author.id}\) (guild - ${message.channel.type})`);
+        }
     } catch (err) {
         console.log(err);
     }
