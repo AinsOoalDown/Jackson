@@ -60,7 +60,6 @@ exports.run = async (client, message) => {
         }
     }
 
-    message.channel.startTyping(20); // max typing time is 20 seconds
     try {
 
         // errors and overrides, the running the command
