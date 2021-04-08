@@ -10,12 +10,12 @@ module.exports = {
     usage: "neko [feet|pussy|tits]",
     groups: ["nsfw"],
     DM: true,
-    cooldown: {type: "map", time: 5},
+    cooldown: { type: "map", time: 0 },
     aliases: [],
-    run: async (client, message, args) => {
+    run: async(client, message, args) => {
         const embed = new MessageEmbed()
-        .setTitle('Neko')
-        .setColor(0x4B0082);
+            .setTitle('Neko')
+            .setColor(0x4B0082);
 
         // get neko kind
         let neko = await choose(args, ["feet", "pussy", "tits"], null);
@@ -31,7 +31,7 @@ module.exports = {
             pic = await nsfw.nekotits();
         }
 
-            embed.setImage(pic);
+        embed.setImage(pic);
 
         return message.reply(embed);
     }

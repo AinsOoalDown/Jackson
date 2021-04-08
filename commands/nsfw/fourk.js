@@ -10,9 +10,10 @@ function imageTemplate(Name, Description, Usage, Groups, dm, Cooldown, Aliases, 
         usage: Usage,
         groups: Groups,
         DM: dm,
-        cooldown: Cooldown,
         aliases: Aliases,
-        run: async(client, message, args) => {
+        cooldown: Cooldown,
+        
+        run: async(client, message, args, command) => {
             asdfasdf = [];
             if (!args[0]) { o = 1; } else { o = args[0]; }
             for (var i = 0; i < o; i++) {
@@ -21,7 +22,6 @@ function imageTemplate(Name, Description, Usage, Groups, dm, Cooldown, Aliases, 
                     .setColor(0x4B0082)
                     .setImage(await Image());
                 asdfasdf.push(embed);
-                console.log(embed);
 
             }
             var reee;
@@ -32,4 +32,17 @@ function imageTemplate(Name, Description, Usage, Groups, dm, Cooldown, Aliases, 
         }
     };
 }
-imageTemplate("hentai", "Random image of hentai", "hentai <number>", ["nsfw"], true, { type: "map", time: 0 }, [""], nsfw.hentai);
+
+imageTemplate("fourk", "Random fourk images", "fourk <number>", ["nsfw"], true, { type: "map", time: 0 }, ["4k"], nsfw.fourk);
+/*
+module.exports = {
+    name: "fourk",
+    description: "Random fourk images",
+    usage: "fourk <number>",
+    groups: ["nsfw"],
+    DM: true,
+    cooldown: { type: "map", time: 0 },
+    aliases: ["4k"],
+    run: await imageTemplatee(),
+    }
+*/
