@@ -21,7 +21,7 @@ function imageTemplate(Name, Description, Usage, Groups, dm, Cooldown, Aliases, 
                     .setColor(0x4B0082)
                     .setImage(await Image());
                 asdfasdf.push(embed);
-                console.log(embed);
+ 
 
             }
             var reee;

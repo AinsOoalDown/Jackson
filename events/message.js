@@ -68,8 +68,12 @@ exports.run = async (client, message) => {
             if (!message.channel.nsfw && message.channel.type != "dm") return client.err(message, "NSFW", "This is not a NSFW channel");
         }
         // owner only
-        if (command.groups[0] == "owner" && message.author.id !== client.config.userID) return client.err(message, "Crenshaw Only -lol no-", "This command can only be run by the bot hoster");
-        if (command.groups[0] == "owner" && message.author.id == client.config.userID) {
+        if (command.groups[0] == "owner" && message.author.id !== config.Owner){
+            console.log(client.config.userID);
+            console.log(message.author.id);
+            return client.err(message, "Crenshaw Only -lol no-", "This command can only be run by the bot hoster");
+        } 
+        if (command.groups[0] == "owner" && message.author.id == config.Owner) {
             console.log(client.config.userID);
             console.log(message.author.id);
         }

@@ -1,35 +1,30 @@
 const { MessageEmbed } = require("discord.js");
-const fetch = require('node-fetch');
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
 
-function imageTemplate(Name, Description, Usage, Groups, dm, Cooldown, Aliases, Image) {
-    module.exports = {
-        name: Name,
-        description: Description,
-        usage: Usage,
-        groups: Groups,
-        DM: dm,
-        cooldown: Cooldown,
-        aliases: Aliases,
-        run: async(client, message, args) => {
-            asdfasdf = [];
-            if (!args[0]) { o = 1; } else { o = args[0]; }
-            for (var i = 0; i < o; i++) {
-                const embed = new MessageEmbed()
-                    .setTitle(Name.charAt(0).toUpperCase() + Name.slice(1))
-                    .setColor(0x4B0082)
-                    .setImage(await Image());
-                asdfasdf.push(embed);
-                console.log(embed);
 
-            }
-            var reee;
-            for (ii = 0; ii < i; ii++) {
-                reee += message.reply(asdfasdf[ii]);
-            }
-            return reee;
+module.exports = {
+    name: "boobs",
+    description: "Random image of boobs",
+    usage: "boobs <number>",
+    groups: ["nsfw"],
+    DM: true,
+    cooldown: { type: "map", time: 0 },
+    aliases: ["tits"],
+    run: async (client, message, args) => {
+        asdfasdf = [];
+        if (!args[0]) { o = 1; } else { o = args[0]; }
+        for (var i = 0; i < o; i++) {
+            const embed = new MessageEmbed()
+                .setTitle("boobs".charAt(0).toUpperCase() + "boobs".slice(1))
+                .setColor(0x4B0082)
+                .setImage(await nsfw.boobs());
+            asdfasdf.push(embed);
         }
-    };
-}
-imageTemplate("boobs", "Random image of boobs", "boobs <number>", ["nsfw"], true, { type: "map", time: 0 }, ["tits"], nsfw.boobs);
+        var reee;
+        for (ii = 0; ii < i; ii++) {
+            reee += message.reply(asdfasdf[ii]);
+        }
+        return reee;
+    }
+};
