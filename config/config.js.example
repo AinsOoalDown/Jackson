@@ -1,0 +1,15 @@
+module.exports = {
+    token: "",
+    owner: "",
+    prefix: "",
+    youtubeToken: "",
+    geniusToken: "",
+    omdbToken: "",
+    jellybeans: {
+        maxGive: 3,
+        maxTake: 1,
+        delayGive: 30,
+        delayTake: 30,
+    },
+    mongoPath: "mongodb://localhost:27017/Jackson-Bot"
+}
