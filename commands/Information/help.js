@@ -1,6 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const { findGroup } = require("../../config/funcs.js");
-const guildsmanage = require("../Owner/guildsmanage.js");
 
 module.exports = {
     name: "help",

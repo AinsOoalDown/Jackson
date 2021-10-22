@@ -1,7 +1,5 @@
 const database = require("quick.db");
 const config = require('../config/config.js');
-const Discord = require("discord.js");
-const client = new Discord.Client();
 
 exports.run = async (client, message) => {
     // user isn't bot

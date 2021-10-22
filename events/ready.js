@@ -1,7 +1,6 @@
 const database = require("quick.db");
 const chalk = require("chalk");
 const mongo = require("../config/mongo.js");
-const { prefix } = require("../config/config.js");
 
 exports.run = async (client) => {
     // mongo db
