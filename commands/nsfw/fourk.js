@@ -10,7 +10,7 @@ module.exports = {
     usage: "fourk <number>",
     groups: ["nsfw"],
     DM: true,
-    aliases: Aliases,
+    aliases: ["4k"],
     cooldown: { type: "map", time: 0 },
 
     run: async (client, message, args, command) => {
