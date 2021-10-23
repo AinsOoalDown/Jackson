@@ -2,7 +2,6 @@ const { MessageEmbed } = require("discord.js");
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
 
-
 module.exports = {
     name: "anal",
     description: "Random image of anal",
@@ -20,10 +19,8 @@ module.exports = {
                 .setColor(0x4B0082)
                 .setImage(await nsfw.anal());
             asdfasdf.push(embed);
-
-
         }
-        var reee;
+        let reee;
         for (ii = 0; ii < i; ii++) {
             reee += message.reply(asdfasdf[ii]);
         }

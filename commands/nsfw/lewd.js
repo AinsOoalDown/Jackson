@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const fetch = require('node-fetch');
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
 
