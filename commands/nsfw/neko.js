@@ -11,7 +11,7 @@ module.exports = {
     DM: true,
     cooldown: { type: "map", time: 0 },
     aliases: [],
-    run: async(client, message, args) => {
+    run: async (client, message, args) => {
         const embed = new MessageEmbed()
             .setTitle('Neko')
             .setColor(0x4B0082);

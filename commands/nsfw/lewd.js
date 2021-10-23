@@ -8,14 +8,14 @@ module.exports = {
     usage: "lewd",
     groups: ["nsfw"],
     DM: true,
-    cooldown: {type: "map", time: 5},
+    cooldown: { type: "map", time: 5 },
     aliases: [],
     run: async (client, message, args) => {
         const embed = new MessageEmbed()
-        .setTitle('Lewd')
-        .setColor(0x4B0082)
-        .setImage(await nsfw.lewd());
-        
+            .setTitle('Lewd')
+            .setColor(0x4B0082)
+            .setImage(await nsfw.lewd());
+
         return message.reply(embed);
     }
 }

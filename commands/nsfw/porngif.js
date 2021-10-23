@@ -8,13 +8,13 @@ module.exports = {
     usage: "porngif",
     groups: ["nsfw"],
     DM: true,
-    cooldown: {type: "map", time: 5},
+    cooldown: { type: "map", time: 5 },
     aliases: ["pgif"],
     run: async (client, message, args) => {
         const embed = new MessageEmbed()
-        .setTitle('PornGIF')
-        .setColor(0x4B0082)
-        .setImage(await nsfw.pgif());
+            .setTitle('PornGIF')
+            .setColor(0x4B0082)
+            .setImage(await nsfw.pgif());
 
         return message.reply(embed);
     }
