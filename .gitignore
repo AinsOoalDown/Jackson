@@ -3,3 +3,6 @@ jacksonDB.db
 config/config.js
 json.sqlite
 config/just incase
+dockerfile
+.dockerignore
+server.js
