@@ -5,4 +5,3 @@ json.sqlite
 config/just incase
 dockerfile
 .dockerignore
-server.js
