@@ -62,7 +62,6 @@ module.exports = {
     owner: "",
     prefix: "",
     youtubeToken: "",
-    geniusToken: "",
     omdbToken: "",
     jellybeans: {
         maxGive: 3,

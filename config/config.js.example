@@ -1,9 +1,8 @@
 module.exports = {
     token: "",
     owner: "",
-    prefix: "",
+    prefix: "~",
     youtubeToken: "",
-    geniusToken: "",
     omdbToken: "",
     jellybeans: {
         maxGive: 3,
