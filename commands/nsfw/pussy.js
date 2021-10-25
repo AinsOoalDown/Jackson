@@ -13,7 +13,7 @@ module.exports = {
     run: async (client, message, args) => {
         asdfasdf = [];
         if (!args[0]) { o = 1; } else { o = args[0]; }
-        for (var i = 0; i < o; i++) {
+        for (let i = 0; i < o; i++) {
             const embed = new MessageEmbed()
                 .setTitle("pussy".charAt(0).toUpperCase() + "pussy".slice(1))
                 .setColor(0x4B0082)
@@ -21,8 +21,8 @@ module.exports = {
             asdfasdf.push(embed);
         }
         let reee;
-        for (ii = 0; ii < i; ii++) {
-            reee += message.reply(asdfasdf[ii]);
+         for (i = 0; i < asdfasdf.lenth; i++) {
+            reee += message.reply(asdfasdf[i]);
         }
         return reee;
     }
