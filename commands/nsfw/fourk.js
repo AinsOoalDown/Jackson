@@ -1,8 +1,6 @@
 const { MessageEmbed } = require("discord.js");
-const fetch = require('node-fetch');
 const NSFW = require("discord-nsfw");
 const nsfw = new NSFW();
-
 
 module.exports = {
     name: "fourk",
@@ -24,7 +22,7 @@ module.exports = {
             asdfasdf.push(embed);
 
         }
-        var reee;
+        let reee;
         for (ii = 0; ii < i; ii++) {
             reee += message.reply(asdfasdf[ii]);
         }

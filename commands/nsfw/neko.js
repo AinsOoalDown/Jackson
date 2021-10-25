@@ -1,5 +1,4 @@
 const { MessageEmbed } = require("discord.js");
-const fetch = require('node-fetch');
 const NSFW = require("discord-nsfw");
 const { choose } = require('../../config/funcs.js');
 const nsfw = new NSFW();
@@ -12,7 +11,7 @@ module.exports = {
     DM: true,
     cooldown: { type: "map", time: 0 },
     aliases: [],
-    run: async(client, message, args) => {
+    run: async (client, message, args) => {
         const embed = new MessageEmbed()
             .setTitle('Neko')
             .setColor(0x4B0082);
