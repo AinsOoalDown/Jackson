@@ -22,7 +22,7 @@
     "waifulabs": "^0.3.0"
   },
   "scripts": {
-    "test": "!ping"
+    "bot":"node ./index.js"
   },
   "author": "Crenshaw#1312",
   "license": "ISC"
